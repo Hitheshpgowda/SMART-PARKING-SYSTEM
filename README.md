@@ -23,17 +23,39 @@ slot in urban areas
 - Breadboard
 - USB Cable
 
-## Circuit Diagram
-![Circuit Diagram Placeholder](#)
+Hardware Setup:
+1. Connect the LiquidCrystal I2C LCD (16x2)
+GND of LCD to GND on Arduino
+VCC of LCD to 5V on Arduino
+SDA of LCD to A4 on Arduino
+SCL of LCD to A5 on Arduino
 
-## Setup Instructions
-1. Connect the components as per the circuit diagram.
-2. Upload the provided Arduino code to the Arduino Uno board.
-3. Ensure that the servo motor is correctly calibrated to open and close the gate.
-4. Power the system and observe the LCD display for slot status updates.
+2. Connect the Servo Motor
+GND of Servo to GND on Arduino
+VCC of Servo to 5V on Arduino
+Signal pin of Servo to Pin 9 on Arduino (or any other PWM pin)
+
+3. Connect the IR Sensors
+For each IR sensor, connect the VCC to 5V on Arduino.
+Connect GND to GND on Arduino.
+Connect the OUT (Signal) pin to digital pins on Arduino (e.g., Pin 2, Pin 3, Pin 4, Pin 5).
+
+4. Power the System
+Use the USB Cable to power the Arduino from your computer or a power adapter.
+
+Software Setup:
+Step 1: Install the Required Libraries in Arduino IDE
+Open the Arduino IDE.
+Go to Sketch > Include Library > Manage Libraries.
+
+Install the following libraries:
+   Servo library (for controlling the servo motor)
+   LiquidCrystal I2C library (for the LCD)
 
 ## Code Explanation
-The code initializes the components and continuously checks the status of the entrance and parking slots. If a vehicle is detected and slots are available, the gate opens automatically. The LCD displays the status of each slot: 
+The code initializes the components and continuously checks the status of the entrance and parking slots. If a vehicle is detected and slots are available, the gate opens automatically. When a vehicle is parkwd in a slot it will be displayed as "O" in the sense occupied 
+else "F" in the sense Free. When all the slots are filled then even if the vehicle is detected the gate won't open.
+The LCD displays the status of each slot: 
 - "O" for Occupied 
 - "F" for Free
 
@@ -46,11 +68,8 @@ The code initializes the components and continuously checks the status of the en
 - `setup()`: Initializes the pins, servo, and LCD.
 - `loop()`: Continuously checks sensor values and updates the servo and LCD display accordingly.
 
-## Video Demonstration
-Watch the project in action [here](). *(Replace with the actual link to your video on YouTube or another platform)*
 
 ## Contributing
 Contributions are welcome! Please fork this repository and submit a pull request for any improvements or new features.
 
-## License
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+
