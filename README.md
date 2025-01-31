@@ -1,5 +1,7 @@
 # Smart Parking System
 
+[Watch the Video](https://drive.google.com/file/d/1DV7mAvQAZv07kDnYAxuYRd06t4pzO5wy/view?usp=drivesdk)
+
 ## Description
 The Smart Parking System is an Arduino-based IoT project
 that automates the process of detecting parking slot availability 
@@ -52,7 +54,7 @@ Install the following libraries:
    Servo library (for controlling the servo motor)
    LiquidCrystal I2C library (for the LCD)
 
-[Watch the Video](https://drive.google.com/file/d/1DV7mAvQAZv07kDnYAxuYRd06t4pzO5wy/view?usp=drivesdk)
+
 
 ## Code Explanation
 The code initializes the components and continuously checks the status of the entrance and parking slots. If a vehicle is detected and slots are available, the gate opens automatically. When a vehicle is parkwd in a slot it will be displayed as "O" in the sense occupied 
